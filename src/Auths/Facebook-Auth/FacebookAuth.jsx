@@ -2,15 +2,17 @@ import React, { useState } from "react";
 import FacebookLogin from "react-facebook-login";
 
 const FacebookAuth = () => {
-  const authId = "704948947579271";
+  const authId = process.env.REACT_APP_FACEBOOK_APP_ID;
   const [user, setUser] = useState({});
   const [login, setLogin] = useState(false);
-
+console.log(authId);
   const requestResponse = (res) => {
    if(res.accessToken){
+     console.log(res)
      setUser(res.name);
      setLogin(true);
    }else{
+     console.log(res);
      setLogin(false);
    }
   };

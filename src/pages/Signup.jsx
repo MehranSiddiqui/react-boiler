@@ -13,33 +13,6 @@ const Signup = () => {
     ? JSON.parse(localStorage.getItem("Users"))
     : [];
     
-    // Manual Validation
-  // const validate = (values) => {
-  //   const errors = {};
-  //   if (!values.firstName) {
-  //     errors.firstName = "Required";
-  //   } else if (values.firstName.length > 15) {
-  //     errors.firstName = "Must be Equal or less than 15 characters";
-  //   }
-  //   if (!values.lastName) {
-  //     errors.lastName = "Required";
-  //   } else if (values.lastName.length > 20) {
-  //     errors.lastName = "Must be Equal or less than 20 characters";
-  //   }
-  //   if (!values.email) {
-  //     errors.email = "Required";
-  //   } else if (
-  //     !/^[A-Z0-9._%+~]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
-  //   ) {
-  //     errors.email = "Invalid Email";
-  //   }
-  //   if (!values.password) {
-  //     errors.password = "Required";
-  //   } else if (values.password.length < 8) {
-  //     errors.password = "Must be more than 8 characters";
-  //   }
-  //   return errors;
-  // };
   const formik = useFormik({
     initialValues: {
       firstName: "",
