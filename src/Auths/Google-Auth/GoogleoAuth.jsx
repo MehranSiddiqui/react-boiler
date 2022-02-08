@@ -7,6 +7,10 @@ const GoogleoAuth = () => {
   const [user, setUser] = useState({});
   const [login, setLogin] = useState(false);
 
+
+  //The parameter of the function is the res object
+  //The res object contains the access token and other information
+  //The access token is used to access the Google API and get the user's profile information once the user has logged in
   const requestResponse = (res) => {
     if (res.accessToken) {
       setUser(res.profileObj.name);
