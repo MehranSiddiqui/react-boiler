@@ -7,30 +7,9 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Landing />
-            </>
-          }
-        />
-        <Route
-          path="/signup"
-          element={
-            <>
-              <Signup />
-            </>
-          }
-        />
-        <Route
-          path="/login"
-          element={
-            <>
-              <Login />
-            </>
-          }
-        />
+        <Route path="/" element={<Landing />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   );
