@@ -1,7 +1,7 @@
 import React from "react";
 import { useFormik } from "formik";
 import Card from "../components/Common/Card/Card";
-import { Container, TextField, Button } from "@mui/material";
+import { TextField, Button } from "@mui/material";
 import * as Yup from "yup";
 
 const Login = () => {
@@ -35,37 +35,37 @@ const Login = () => {
   });
 
   return (
-    <Container>
-      <Card>
-        <h1>Please Login</h1>
-        <form onSubmit={formik.handleSubmit} className="data-form">
-          <TextField
-            fullWidth
-            id="email"
-            name="email"
-            type="text"
-            onChange={formik.handleChange}
-            value={formik.values.email}
-            label="Email"
-          />
-          {formik.errors.email ? <div>{formik.errors.email}</div> : null}
-          <TextField
-            fullWidth
-            id="password"
-            name="password"
-            type="password"
-            onChange={formik.handleChange}
-            value={formik.values.password}
-            label="Password"
-          />
-          {formik.errors.password ? <div>{formik.errors.password}</div> : null}
+    <Card className="data-form">
+      <h1>Please Login</h1>
+      <form onSubmit={formik.handleSubmit} className="data-form">
+        <TextField
+          fullWidth
+          id="email"
+          name="email"
+          type="text"
+          onChange={formik.handleChange}
+          value={formik.values.email}
+          label="Email"
+          className="text-field"
+        />
+        {formik.errors.email ? <div>{formik.errors.email}</div> : null}
+        <TextField
+          fullWidth
+          id="password"
+          name="password"
+          type="password"
+          onChange={formik.handleChange}
+          value={formik.values.password}
+          label="Password"
+          className="text-field"
+        />
+        {formik.errors.password ? <div>{formik.errors.password}</div> : null}
 
-          <Button variant="outlined" type="submit">
-            Login
-          </Button>
-        </form>
-      </Card>
-    </Container>
+        <Button variant="outlined" type="submit" className="button-theme">
+          Login
+        </Button>
+      </form>
+    </Card>
   );
 };
 

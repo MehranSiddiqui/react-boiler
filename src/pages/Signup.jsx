@@ -3,7 +3,6 @@ import { useFormik } from "formik";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import TextField from "@mui/material/TextField";
-import { Container } from "@mui/material";
 import Card from "../components/Common/Card/Card";
 import { Button } from "@mui/material";
 
@@ -49,8 +48,7 @@ const Signup = () => {
     },
   });
   return (
-    <Container fixed>
-      <Card>
+      <Card className='data-form'>
         <h1>Hello</h1>
         <form onSubmit={formik.handleSubmit} className="data-form">
           <TextField
@@ -63,6 +61,7 @@ const Signup = () => {
             onBlur={formik.handleBlur}
             value={formik.values.firstName}
             label="First Name"
+            className="text-field"
           />
           {formik.touched.firstName && formik.errors.firstName ? (
             <div className="message">{formik.errors.firstName}</div>
@@ -76,6 +75,7 @@ const Signup = () => {
             onChange={formik.handleChange}
             value={formik.values.lastName}
             label="Last Name"
+            className="text-field"
           />
           {formik.touched.lastName && formik.errors.lastName ? (
             <div className="message">{formik.errors.lastName}</div>
@@ -89,6 +89,7 @@ const Signup = () => {
             onBlur={formik.handleBlur}
             value={formik.values.email}
             label="Email"
+            className="text-field"
           />
           {formik.touched.email && formik.errors.email ? (
             <div className="message">{formik.errors.email}</div>
@@ -102,6 +103,7 @@ const Signup = () => {
             onChange={formik.handleChange}
             value={formik.values.password}
             label="Password"
+            className="text-field"
           />
           {formik.touched.password && formik.errors.password ? (
             <div className="message">{formik.errors.password}</div>
@@ -110,7 +112,6 @@ const Signup = () => {
           <Button variant="outlined" type="submit">Register</Button>
         </form>
       </Card>
-    </Container>
   );
 };
 
